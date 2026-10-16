@@ -33,8 +33,36 @@
   const io = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
   }, { threshold: 0.12 }) : null;
-  const observe = (root = document) => $$(".reveal:not(.is-in)", root).forEach((el) => (io ? io.observe(el) : el.classList.add("is-in")));
+  const observe = (root = document) => {
+    // stagger siblings that reveal together (cards in a grid, etc.)
+    $$(".reveal:not(.is-in)", root).forEach((el) => {
+      const sibs = Array.from(el.parentElement.children).filter((c) => c.classList.contains("reveal"));
+      if (sibs.length > 1) el.style.setProperty("--stagger", (sibs.indexOf(el) % 6) * 0.09 + "s");
+      io ? io.observe(el) : el.classList.add("is-in");
+    });
+  };
   observe();
+
+  /* ---------- Process line draws with scroll ---------- */
+  const proc = $("[data-process]");
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (proc && !reduce) {
+    const upd = () => {
+      const r = proc.getBoundingClientRect(), vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.6)));
+      proc.style.setProperty("--p", p.toFixed(3));
+    };
+    window.addEventListener("scroll", upd, { passive: true }); upd();
+  }
+
+  /* ---------- Gentle parallax on hero image ---------- */
+  const heroImg = $(".hero__media");
+  if (heroImg && !reduce && window.innerWidth > 920) {
+    window.addEventListener("scroll", () => {
+      const y = Math.min(window.scrollY, 700);
+      heroImg.style.transform = `translateY(${y * -0.06}px)`;
+    }, { passive: true });
+  }
 
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
