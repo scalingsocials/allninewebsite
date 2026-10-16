@@ -498,14 +498,16 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); letter-spacing: -.02em; line-hei
   -webkit-mask-image: radial-gradient(900px 500px at 70% 30%, #000 20%, transparent 75%);
           mask-image: radial-gradient(900px 500px at 70% 30%, #000 20%, transparent 75%);
 }
-.hero::after { content: ""; position: absolute; width: 520px; height: 520px; right: -120px; top: -160px; border-radius: 50%; background: radial-gradient(circle, rgba(76,116,208,.35), transparent 65%); filter: blur(10px); animation: glow 14s ease-in-out infinite alternate; pointer-events: none; }
+.hero::after { content: ""; position: absolute; width: 520px; height: 520px; right: -120px; top: -160px; border-radius: 50%; background: radial-gradient(circle, rgba(76,116,208,.35), transparent 65%); animation: glow 14s ease-in-out infinite alternate; pointer-events: none; }
 @keyframes glow { to { transform: translate(-160px, 120px) scale(1.15); } }
 .hero h1 { color: #fff; }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .06em; }
 .hero__title .line > span { display: inline-block; transform: translateY(105%); animation: lineUp 1.1s var(--ease) forwards; }
 .hero__title .line:nth-child(1) > span { animation-delay: .15s; }
 .hero__title .line:nth-child(2) > span { animation-delay: .27s; }
-.hero__title .line:nth-child(3) > span { animation-delay: .39s; color: var(--brass-2); }
+.hero__title .line:nth-child(3) > span { animation-delay: .39s; }
+.hero__title .line:nth-child(4) > span { animation-delay: .51s; color: var(--brass-2); }
+.hero__title { font-size: clamp(2.3rem, 4.3vw, 3.6rem); line-height: 1.06; }
 @keyframes lineUp { to { transform: none; } }
 .hero-in { opacity: 0; transform: translateY(16px); animation: fadeUp .9s var(--ease) forwards; animation-delay: var(--d, 0s); }
 @keyframes fadeUp { to { opacity: 1; transform: none; } }
@@ -517,7 +519,7 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); letter-spacing: -.02em; line-hei
 .hero__points li { color: #b9c4d6; }
 
 /* signature: the nine-dot matrix */
-.nine { position: absolute; z-index: 0; top: -34px; right: -34px; display: grid; grid-template-columns: repeat(3, 14px); gap: 18px; }
+.nine { position: absolute; z-index: 0; top: -44px; right: -44px; display: grid; grid-template-columns: repeat(3, 14px); gap: 18px; }
 .nine span { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.16); animation: dot 4.5s ease-in-out infinite; animation-delay: calc(var(--i) * .18s + 1.4s); }
 .nine span:last-child { background: var(--brass-2); animation-name: dotGold; }
 @keyframes dot { 0%, 100% { background: rgba(255,255,255,.16); transform: scale(1); } 12% { background: rgba(255,255,255,.85); transform: scale(1.25); } 30% { background: rgba(255,255,255,.16); transform: scale(1); } }
