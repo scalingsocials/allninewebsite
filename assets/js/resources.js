@@ -33,5 +33,19 @@ window.ALLNINE_RESOURCES = [
     category: "Strategy & Finance",
     description: "What a virtual CFO actually does, when you need one, and the monthly reporting pack every founder should receive.",
     file: "assets/pdfs/virtual-cfo-playbook.pdf"
+  },
+  {
+    id: "startup-cfo-idea-to-exit",
+    title: "From Idea to Exit: Your CFO Partner at Every Stage",
+    category: "Consulting",
+    description: "CFO services for start-ups, stage by stage — the value creation map plus compliance and strategic priorities from incorporation to post-funding governance.",
+    file: "assets/pdfs/startup-cfo-idea-to-exit.pdf"
+  },
+  {
+    id: "cashflow-case-study",
+    title: "Case Study: Cash Flow Visibility & Working Capital Transformation",
+    category: "Strategy & Finance",
+    description: "How a 13-week rolling forecast and working capital discipline unlocked ₹85 lakh and cut the cash conversion cycle by 28 days for a ₹300 Cr food manufacturer.",
+    file: "assets/pdfs/cashflow-working-capital-case-study.pdf"
   }
 ];

@@ -44,16 +44,31 @@
   observe();
 
   /* ---------- Process line draws with scroll ---------- */
-  const proc = $("[data-process]");
+  const procs = $$("[data-process]");
   const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (proc && !reduce) {
-    const upd = () => {
+  if (procs.length && !reduce) {
+    const upd = () => procs.forEach((proc) => {
       const r = proc.getBoundingClientRect(), vh = window.innerHeight;
       const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.6)));
       proc.style.setProperty("--p", p.toFixed(3));
-    };
+    });
     window.addEventListener("scroll", upd, { passive: true }); upd();
   }
+
+  /* ---------- Startup stage tabs ---------- */
+  $$("[data-stages]").forEach((box) => {
+    const tabs = $$(".stage-tab", box), panels = $$(".stage-panel", box);
+    const show = (i) => {
+      tabs.forEach((t, j) => { t.classList.toggle("is-active", j === i); t.setAttribute("aria-selected", j === i); });
+      panels.forEach((p, j) => { p.hidden = j !== i; p.classList.toggle("is-active", j === i); });
+    };
+    tabs.forEach((t, i) => t.addEventListener("click", () => show(i)));
+    box.addEventListener("keydown", (e) => {
+      const cur = tabs.findIndex((t) => t.classList.contains("is-active"));
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); const n = (cur + 1) % tabs.length; show(n); tabs[n].focus(); }
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); const n = (cur - 1 + tabs.length) % tabs.length; show(n); tabs[n].focus(); }
+    });
+  });
 
   /* ---------- Gentle parallax on hero image ---------- */
   const heroImg = $(".hero__media");
