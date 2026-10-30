@@ -1,9 +1,9 @@
 /* =========================================================
-   All Nine Services — form settings
+   All Nine Services: form settings
    ---------------------------------------------------------
    Leads (contact form + PDF download form) are collected by
    NETLIFY FORMS automatically when the site is hosted on
-   Netlify — nothing to set up. Submissions appear in
+   Netlify, with nothing to set up. Submissions appear in
    Netlify → Site → Forms, with optional email alerts.
 
    Hosting somewhere else? Paste a form-service endpoint

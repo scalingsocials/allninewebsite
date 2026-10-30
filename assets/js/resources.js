@@ -1,5 +1,5 @@
 /* =========================================================
-   All Nine Services — downloadable PDFs
+   All Nine Services: downloadable PDFs
    ---------------------------------------------------------
    TO ADD A NEW PDF:
      1. Put the PDF file in  assets/pdfs/
@@ -38,7 +38,7 @@ window.ALLNINE_RESOURCES = [
     id: "startup-cfo-idea-to-exit",
     title: "From Idea to Exit: Your CFO Partner at Every Stage",
     category: "Consulting",
-    description: "CFO services for start-ups, stage by stage — the value creation map plus compliance and strategic priorities from incorporation to post-funding governance.",
+    description: "CFO services for start-ups, stage by stage. Includes the value creation map plus compliance and strategic priorities from incorporation to post-funding governance.",
     file: "assets/pdfs/startup-cfo-idea-to-exit.pdf"
   },
   {

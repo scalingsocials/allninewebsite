@@ -1,5 +1,5 @@
 /* =========================================================
-   All Nine Services — site behaviour
+   All Nine Services: site behaviour
    ========================================================= */
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
@@ -168,7 +168,7 @@
       try {
         await sendLead(form);
         form.reset();
-        status(form, "Thank you — your message has reached us. Our team will get back to you within one business day.", "ok");
+        status(form, "Thank you. Your message has reached us. Our team will get back to you within one business day.", "ok");
       } catch (err) {
         console.error(err);
         status(form, "Sorry, something went wrong. Please email us directly at " + (CFG.CONTACT_EMAIL || "") + ".", "err");
