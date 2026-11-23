@@ -1,5 +1,5 @@
 /* =========================================================
-   All Nine Services: site behaviour
+   All Nine Consultants: site behaviour
    ========================================================= */
 (function () {
   const $ = (s, el = document) => el.querySelector(s);

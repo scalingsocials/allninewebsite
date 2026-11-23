@@ -1,5 +1,5 @@
 /* =========================================================
-   All Nine Services: downloadable PDFs
+   All Nine Consultants: downloadable PDFs
    ---------------------------------------------------------
    TO ADD A NEW PDF:
      1. Put the PDF file in  assets/pdfs/

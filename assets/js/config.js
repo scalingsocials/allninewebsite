@@ -1,5 +1,5 @@
 /* =========================================================
-   All Nine Services: form settings
+   All Nine Consultants: form settings
    ---------------------------------------------------------
    Leads (contact form + PDF download form) are collected by
    NETLIFY FORMS automatically when the site is hosted on
@@ -12,5 +12,5 @@
    ========================================================= */
 window.ALLNINE_CONFIG = {
   FORM_ENDPOINT: "",
-  CONTACT_EMAIL: "hello@allnineservices.com"
+  CONTACT_EMAIL: "mussarat.jahan@allninecpl.com"
 };
