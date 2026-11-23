@@ -70,6 +70,18 @@
     });
   });
 
+
+  /* ---------- Collapsible service cards ---------- */
+  $$(".svc-toggle").forEach((btn) => {
+    const panel = document.getElementById(btn.getAttribute("aria-controls"));
+    const label = $(".svc-toggle__label", btn);
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") !== "true";
+      btn.setAttribute("aria-expanded", open);
+      panel.classList.toggle("is-open", open);
+      label.textContent = open ? "Hide services" : "View services";
+    });
+  });
   /* ---------- Gentle parallax on hero image ---------- */
   const heroImg = $(".hero__media");
   if (heroImg && !reduce && window.innerWidth > 920) {

@@ -832,3 +832,17 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); letter-spacing: -.02em; line-hei
 .nav { height: 88px; }
 .site-header.is-scrolled .nav { height: 72px; }
 @media (max-width: 920px) { .nav, .site-header.is-scrolled .nav { height: 80px; } .brand--logo img, .site-header.is-scrolled .brand--logo img { height: 52px; } }
+
+/* collapsible service cards (home) */
+.services-grid--4 { align-items: start; }
+.services-grid--4 .service-card__body { padding-bottom: 22px; }
+.svc-toggle { display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin: 6px 0 14px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: #f7f9fc; color: var(--ink); font-weight: 700; font-size: .9rem; transition: background .3s, border-color .3s; }
+.svc-toggle:hover { border-color: #cfd9ea; background: #eef3f9; }
+.svc-toggle svg { width: 18px; height: 18px; transition: transform .45s var(--ease); }
+.svc-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.svc-more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+.svc-more.is-open { grid-template-rows: 1fr; }
+.svc-more__inner { overflow: hidden; min-height: 0; }
+.svc-more__inner > ul { margin-top: 2px; }
+@media (prefers-reduced-motion: reduce) { .svc-more { transition: none; } }
+@media (min-width: 1181px) { .services-grid--4 .service-card__tag { min-height: 4.6em; } }
